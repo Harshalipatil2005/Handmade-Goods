@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Handmade Goods</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #dfdcd3;
+      color: #463f32;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header.normal-header {
+      background-color: #775e48;
+      padding: 10px 0;
+      font-size: 20px;
+    }
+
+    header.normal-header ul li a {
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+
+
+    header.additional-header {
+      background-color: #A4907C;
+      color: #000;
+      padding: 10px 0;
+    }
+
+    header.additional-header ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    header.additional-header ul li {
+      margin-right: 20px;
+    }
+
+    header.additional-header ul li a {
+      text-decoration: none;
+      color: #000;
+    }
+
+
+    header .logo h2 {
+      margin: 0;
+      font-size: 30px;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+
+    .icons {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .icons a {
+      color: #fff;
+      margin-left: 20px;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+      border-radius: 10px;
+      /* Add border radius */
+    }
+
+    /* Dropdown content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #A4907C;
+      min-width: 100px;
+      z-index: 1;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      /* Add border radius */
+      border: 2px solid transparent;
+      /* Add border to dropdown content */
+    }
+
+    /* Show dropdown content on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Style dropdown links */
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #000;
+      border-radius: 10px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #8c765b;
+    }
+
+    /* Border specifically for EUR dropdown */
+    .dropdown-content.eur {
+      border-color: blue;
+      /* Change border color */
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    .logo h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .hover-underline {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    .hover-underline:hover {
+      text-decoration: none;
+      color: #e8c6ad;
+    }
+
+    .containerc1 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .image {
+      flex-basis: calc(25% - 5px);
+      /* Adjusted to reduce gap between images */
+
+      position: relative;
+      overflow: hidden;
+      /* Clip the image for border radius */
+      border-radius: 10px;
+      /* Border radius for images */
+    }
+
+    .image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .content {
+
+      padding: 10px;
+      text-align: center;
+      flex: 1;
+      /* Added to make the content divs flexible */
+      margin-top: 0;
+    }
+
+    /* Added new styles */
+    .containerc1-wrapper {
+      display: flex;
+      justify-content: space-between;
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 10px;
+      /* Added padding to the container */
+      box-sizing: border-box;
+      /* Include padding in width calculation */
+    }
+
+    .containerc1-wrapper .content {
+      flex-basis: 25%;
+      margin-left: 10px;
+      /* Added margin between content blocks */
+      margin-bottom: 100px;
+    }
+
+    .containerc1-wrapper .content:first-child {
+      margin-left: 0;
+      /* No margin for the first content block */
+    }
+
+    .member-perks {
+      text-align: center;
+      /* Center the text */
+      margin-bottom: 20px;
+      /* Add some bottom margin */
+    }
+
+    .member-perks h2 {
+      font-size: 35px;
+      /* Adjust font size */
+      color: #463f32;
+      /* Adjust text color */
+    }
+  </style>
+</head>
+
+
+
+<header class="additional-header">
+  <div class="container">
+    <div>
+      <span><b>Call us free 24/7:(+91)1234-567-890</b></span>
+    </div>
+
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <ul>
+      <li><b><a href="#contact-us">Contact Us</a></b></li>
+      <li><b><a href="#todays-deal">Today's Deal</a></b></li>
+      <li class="dropdown">
+        <b><a href="#currency">EUR <i class="fas fa-caret-down"></i></a></b>
+
+        <div class="dropdown-content">
+          <a href="#">INR</a>
+          <a href="#">USD</a>
+          <a href="#">GBP</a>
+          <a href="#">JPY</a>
+          <a href="#">AUD</a>
+          <a href="#">CAD</a>
+          <a href="#">CHF</a>
+          <a href="#">CNY</a>
+          <a href="#">SEK</a>
+          <a href="#">NZD</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <b><a href="#language">English <i class="fas fa-caret-down"></i></a></b>
+        <div class="dropdown-content">
+          <a href="#">Hindi</a>
+          <a href="#">French</a>
+          <a href="#">Spanish</a>
+          <a href="#">German</a>
+          <a href="#">Chinese</a>
+          <a href="#">Arabic</a>
+          <a href="#">Russian</a>
+          <a href="#">Portuguese</a>
+          <a href="#">Japanese</a>
+
+        </div>
+      </li>
+    </ul>
+    </ul>
+
+  </div>
+</header>
+
+
+<header class="normal-header">
+  <div class="container">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo">
+      <h2><b>Handmade Goods</b></h2>
+    </div>
+    <nav>
+      <ul>
+        <li><b><a href="index.html">
+              <p class="hover-underline">Home</p>
+            </a></b></li>
+        <li><b><a href="ikebana.html">
+              <p class="hover-underline">Ikebana</p>
+            </a></b></li>
+        <li><b><a href="ceramics.html">
+              <p class="hover-underline">Ceramics</p>
+            </a></b></li>
+        <li><b><a href="membership.html">
+              <p class="hover-underline">Membership</p>
+            </a></b></li>
+        <li><b><a href="blog.html">
+              <p class="hover-underline">Blog</p>
+            </a></b></li>
+      </ul>
+    </nav>
+    <div class="icons">
+
+      <a href="#search">
+        <p class="hover-underline"><i class="fas fa-search"></i></p>
+      </a>
+      <a href="#profile">
+        <p class="hover-underline"><i class="fas fa-user"></i></p>
+      </a>
+      <a href="#heart">
+        <p class="hover-underline"><i class="fas fa-heart"></i></p>
+      </a>
+      <a href="#cart">
+        <p class="hover-underline"><i class="fas fa-shopping-cart"></i></p>
+      </a>
+    </div>
+  </div>
+</header>
+
+<body>
+  <div class="video-text-container">
+    <video autoplay loop muted preload="auto">
+      <source src="13.mp4" type="video/mp4" />
+    </video>
+
+
+    <div class="text-container join-in-container">
+      <h1>Join In</h1>
+      <p>Be a part of our community and <br>experience the joy of handmade goods!</p>
+      <a href="#" class="cta-button">Join Now</a>
+    </div>
+
+  </div>
+
+  <div class="member-perks">
+    <h2>Member Perks</h2>
+  </div>
+
+
+  <div class="containerc1">
+    <div class="image">
+      <img src="i2.jpg" alt="Image 1">
+    </div>
+    <div class="image">
+      <img src="i3.jpg" alt="Image 2">
+    </div>
+    <div class="image">
+      <img src="i4.jpg" alt="Image 3">
+    </div>
+    <div class="image">
+      <img src="i1.jpg" alt="Image 4">
+    </div>
+  </div>
+
+  <!-- Wrapper for content -->
+  <div class="containerc1-wrapper">
+    <div class="content">
+      <h4>Exclusive Experience</h4>
+      <p>Indulge your love for handmade goods and be rewarded with exclusive member-only perks.</p>
+    </div>
+    <div class="content">
+      <h4>Redeem points for upto 70-80% OFF</h4>
+      <p>Your points are your superpower. Utilize them to enjoy discounts of up to 70-80% on exquisite handcrafted
+        items.</p>
+    </div>
+    <div class="content">
+      <h4>Birthday Surprise</h4>
+      <p>Members get a special gift coupon on their special day for beautifully crafted surprises.</p>
+    </div>
+    <div class="content">
+      <h4>Monthly Coupons</h4>
+      <p>Members get monthly coupons for refreshing their artisanal collection with unique handcrafted treasures.</p>
+    </div>
+  </div>
+
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+      <div class="logo">
+        <img src="logo.jpeg" alt="Logo">
+        <h1><b>Handmade Goods</b></h1>
+      </div>
+
+      <p class="footer-links">
+        <a href="#" class="link-1">Home</a>
+
+        <a href="#">Blog</a>
+
+        <a href="#">Pricing</a>
+
+        <a href="#">About</a>
+
+        <a href="#">Faq</a>
+
+        <a href="#">Contact</a>
+      </p>
+
+      <p class="footer-company-name">Handmade Goods © 2024</p>
+    </div>
+
+    <div class="footer-center">
+
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>1300 Handmade Goods</span> Pune, Maharashtra</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>(+91)1234-567-890</p>
+      </div>
+
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:support@handmadegoods.com">support@handmadegoods.com</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+
+      <p class="footer-company-about">
+        <span>About Us</span>
+        More than just a store, we connect you with artisans and the stories behind their creations. Bring the beauty of
+        handmade into your home.
+      </p>
+
+      <div class="footer-icons">
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+
+      </div>
+
+
+
+    </div>
+
+  </footer>
+</body>
+
+</html>

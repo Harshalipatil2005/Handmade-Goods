@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Handmade Goods</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #dfdcd3;
+      color: #463f32;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header.normal-header {
+      background-color: #775e48;
+      padding: 10px 0;
+      font-size: 20px;
+    }
+
+    header.normal-header ul li a {
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+
+
+
+    header.additional-header {
+      background-color: #A4907C;
+      color: #000;
+      padding: 10px 0;
+    }
+
+    header.additional-header ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    header.additional-header ul li {
+      margin-right: 20px;
+    }
+
+    header.additional-header ul li a {
+      text-decoration: none;
+      color: #000;
+    }
+
+
+    header .logo h2 {
+      margin: 0;
+      font-size: 30px;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+
+    .icons {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .icons a {
+      color: #fff;
+      margin-left: 20px;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+      border-radius: 10px;
+      /* Add border radius */
+    }
+
+    /* Dropdown content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #A4907C;
+      min-width: 100px;
+      z-index: 1;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      /* Add border radius */
+      border: 2px solid transparent;
+      /* Add border to dropdown content */
+    }
+
+    /* Show dropdown content on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Style dropdown links */
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #000;
+      border-radius: 10px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #8c765b;
+    }
+
+    /* Border specifically for EUR dropdown */
+    .dropdown-content.eur {
+      border-color: blue;
+      /* Change border color */
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    .logo h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .hover-underline {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    .hover-underline:hover {
+      text-decoration: none;
+      color: #e8c6ad;
+    }
+
+
+    .product-boxes {
+      background-color: #dfdcd3;
+      padding: 20px 0;
+      cursor: pointer;
+    }
+
+    .product-box {
+      width: calc(20% - 20px);
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 0.5px;
+      margin-left: 0.5px;
+      box-sizing: border-box;
+      text-align: left;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .product-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .product-box {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+    .product-box img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .product-box h5,
+    .product-box p {
+      margin: 1px 0;
+    }
+
+    .addtocart {
+      border: 1px solid white;
+      background-color: #b8a57d;
+      color: white;
+      padding: 5px 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      margin-top: 2px;
+      cursor: pointer;
+    }
+
+    .addtocart:hover {
+      background-color: #8c765b;
+    }
+
+    .checked {
+      color: goldenrod;
+      font-size: 10px;
+      vertical-align: middle;
+      margin-right: 2px;
+    }
+
+    .fa {
+      font-size: 10px;
+      vertical-align: middle;
+    }
+
+    .euro {
+      font-size: 13px;
+      display: flex;
+      /* Set display to flex for inline alignment */
+      align-items: baseline;
+      /* Align items at their baseline */
+      margin-top: 10px;
+      margin-bottom: 2px;
+    }
+
+    .euro .original-price {
+      color: grey;
+      /* Set color to grey for the original price */
+      margin-right: 6px;
+      /* Add margin for spacing */
+    }
+
+    .euro .discounted-price {
+      margin-left: 6px;
+      /* Add margin for spacing */
+    }
+
+    .containerb1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      background-color: #dfdcd3;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .options {
+      display: flex;
+      align-items: center;
+    }
+
+    .options label {
+      margin-right: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #A4907C;
+    }
+
+    .options select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    .filter {
+      font-size: 14px;
+      font-weight: bold;
+      color: #555;
+      margin-left: 2.5cm;
+      cursor: pointer;
+    }
+
+    .sort-by {
+      font-size: 14px;
+      font-weight: bold;
+      color: #555;
+      margin-right: 2.5cm;
+    }
+
+    .sort-by select {
+      background-color: #e6e6e6;
+      /* Light gray color */
+      color: #333;
+      /* Text color */
+    }
+  </style>
+</head>
+
+
+
+
+<header class="additional-header">
+  <div class="container">
+    <div>
+      <span><b>Call us free 24/7:(+91)1234-567-890</b></span>
+    </div>
+
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <ul>
+      <li><b><a href="#contact-us">Contact Us</a></b></li>
+      <li><b><a href="#todays-deal">Today's Deal</a></b></li>
+      <li class="dropdown">
+        <b><a href="#currency">EUR <i class="fas fa-caret-down"></i></a></b>
+
+        <div class="dropdown-content">
+          <a href="#">INR</a>
+          <a href="#">USD</a>
+          <a href="#">GBP</a>
+          <a href="#">JPY</a>
+          <a href="#">AUD</a>
+          <a href="#">CAD</a>
+          <a href="#">CHF</a>
+          <a href="#">CNY</a>
+          <a href="#">SEK</a>
+          <a href="#">NZD</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <b><a href="#language">English <i class="fas fa-caret-down"></i></a></b>
+        <div class="dropdown-content">
+          <a href="#">Hindi</a>
+          <a href="#">French</a>
+          <a href="#">Spanish</a>
+          <a href="#">German</a>
+          <a href="#">Chinese</a>
+          <a href="#">Arabic</a>
+          <a href="#">Russian</a>
+          <a href="#">Portuguese</a>
+          <a href="#">Japanese</a>
+
+        </div>
+      </li>
+    </ul>
+    </ul>
+
+  </div>
+</header>
+
+
+<header class="normal-header">
+  <div class="container">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo">
+      <h2><b>Handmade Goods</b></h2>
+    </div>
+    <nav>
+      <ul>
+        <li><b><a href="index.html">
+              <p class="hover-underline">Home</p>
+            </a></b></li>
+        <li><b><a href="ikebana.html">
+              <p class="hover-underline">Ikebana</p>
+            </a></b></li>
+        <li><b><a href="ceramics.html">
+              <p class="hover-underline">Ceramics</p>
+            </a></b></li>
+        <li><b><a href="membership.html">
+              <p class="hover-underline">Membership</p>
+            </a></b></li>
+        <li><b><a href="blog.html">
+              <p class="hover-underline">Blog</p>
+            </a></b></li>
+      </ul>
+    </nav>
+    <div class="icons">
+
+      <a href="#search">
+        <p class="hover-underline"><i class="fas fa-search"></i></p>
+      </a>
+      <a href="#profile">
+        <p class="hover-underline"><i class="fas fa-user"></i></p>
+      </a>
+      <a href="#heart">
+        <p class="hover-underline"><i class="fas fa-heart"></i></p>
+      </a>
+      <a href="#cart">
+        <p class="hover-underline"><i class="fas fa-shopping-cart"></i></p>
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="containerb1">
+  <div class="filter"><i style="font-size:14px" class="fa">&#xf0b0;</i> SHOW FILTERS</div>
+
+  <div class="sort-by" style="margin-left: 20px;"> <!-- Adjusted margin -->
+    <label for="sort-by">SORT BY:</label>
+    <select id="sort-by">
+      <option value="latest">Recommended</option>
+      <option value="bestseller">New Arrivals</option>
+      <option value="discount">Price: Low to High</option>
+      <option value="discount">Price: High to Low</option>
+    </select>
+  </div>
+</div>
+</div>
+</body>
+
+</html>
+
+<section class="product-boxes">
+  <div class="container">
+
+    <div class="product-box">
+      <img src="a1.jpeg" alt="Product 1">
+      <h5>Beautiful Mini Yellow Ikebana Kit</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;93.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+
+    </div>
+    <div class="product-box">
+      <img src="a2.jpeg" alt="Product 2">
+      <h5>Low Grey Ceramic<br>Ikebana Vase</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;93.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+
+    <div class="product-box">
+      <img src="a3.jpeg" alt="Product 3">
+      <h5>Elegant Ikebana Flowers <br>Decor Item</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <div class="euro"><b>&#x20AC;45.60</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="a4.jpeg" alt="Product 4">
+      <h5>Beautiful Red Orchida with Vase </h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;79.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="a5.jpeg" alt="Product 5">
+      <h5>Japanese Ikebana vase set of 3 vase</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;82.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="product-boxes">
+  <div class="container">
+
+    <div class="product-box">
+      <img src="a6.jpeg" alt="Product 1">
+      <h5>Bloem — Chinnoe & Vlemmix Chandelier</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;93.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+
+    </div>
+    <div class="product-box">
+      <img src="a7.jpeg" alt="Product 2">
+      <h5>Wooden Ikebana Ga Kenzan flower arranger</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;93.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+
+    <div class="product-box">
+      <img src="a8.jpeg" alt="Product 3">
+      <h5>Stacking Ikebana White Bowl and white flower</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <div class="euro"><b>&#x20AC;45.60</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="a9.jpeg" alt="Product 4">
+      <h5>Outgeek Creative Ikebana Pot Flower Container Decoration</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;79.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="a10.jpeg" alt="Product 5">
+      <h5>Bloomist Japnese Ikebana white Vase</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;82.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="product-boxes">
+  <div class="container">
+
+    <div class="product-box">
+      <img src="a11.jpeg" alt="Product 1">
+      <h5>Elegant White Ikebana bowl Pink flowers</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;93.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+
+    </div>
+    <div class="product-box">
+      <img src="a12.jpeg" alt="Product 2">
+      <h5>Japanese Round Shaped<br>Ikebana Vse</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;93.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+
+    <div class="product-box">
+      <img src="a13.jpeg" alt="Product 3">
+      <h5>Japanese Mino Ware Ikebana<br> Ceramic Round Flower Vase </h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <div class="euro"><b>&#x20AC;45.60</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="a14.jpeg" alt="Product 4">
+      <h5>Ceramic Orange Flower Vase Kit </h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;79.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="a15.jpeg" alt="Product 5">
+      <h5>Brutalist-Inspired <br>Ikebana Vase</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;82.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="product-boxes">
+  <div class="container">
+
+    <div class="product-box">
+      <img src="a16.jpeg" alt="Product 1">
+      <h5>Set of 3 Hana Vase white orange black</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;93.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+
+    </div>
+    <div class="product-box">
+      <img src="a17.jpeg" alt="Product 2">
+      <h5>Ceramic Small Classic White Vase</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;93.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+
+    <div class="product-box">
+      <img src="a18.jpeg" alt="Product 3">
+      <h5>Asthetic Black Ikebana <br>Flower Holder</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <div class="euro"><b>&#x20AC;45.60</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="a19.jpeg" alt="Product 4">
+      <h5>Elegant Ikebana Flower Holder for Home </h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;79.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="a20.jpeg" alt="Product 5">
+      <h5>Beautifully arranged tulips for decor</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;82.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="product-boxes">
+  <div class="container">
+
+    <div class="product-box">
+      <img src="a21.jpeg" alt="Product 1">
+      <h5>Palm Floral Decor </h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;93.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+
+    </div>
+    <div class="product-box">
+      <img src="a22.jpeg" alt="Product 2">
+      <h5>2 color Ceramic KENZAN</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;93.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+
+    <div class="product-box">
+      <img src="a23.jpeg" alt="Product 3">
+      <h5>Okebana Floral Arranger</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <div class="euro"><b>&#x20AC;45.60</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="a24.jpeg" alt="Product 4">
+      <h5>Flower Arranger in white</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;79.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="a25.jpeg" alt="Product 5">
+      <h5>Japanese Flower Arranger</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;82.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer-distributed">
+
+  <div class="footer-left">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo">
+      <h1><b>Handmade Goods</b></h1>
+    </div>
+
+    <p class="footer-links">
+      <a href="#" class="link-1">Home</a>
+
+      <a href="#">Blog</a>
+
+      <a href="#">Pricing</a>
+
+      <a href="#">About</a>
+
+      <a href="#">Faq</a>
+
+      <a href="#">Contact</a>
+    </p>
+
+    <p class="footer-company-name">Handmade Goods © 2024</p>
+  </div>
+
+  <div class="footer-center">
+
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span>1300 Handmade Goods</span> Pune, Maharashtra</p>
+    </div>
+
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>(+91)1234-567-890</p>
+    </div>
+
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@handmadegoods.com">support@handmadegoods.com</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-right">
+
+    <p class="footer-company-about">
+      <span>About Us</span>
+      More than just a store, we connect you with artisans and the stories behind their creations. Bring the beauty of
+      handmade into your home.
+    </p>
+
+    <div class="footer-icons">
+
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+
+    </div>
+
+
+
+  </div>
+
+</footer>

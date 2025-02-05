@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handmade Goods</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #dfdcd3;
+      color: #463f32;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+
+    header.normal-header {
+      background-color: #775e48;
+      padding: 10px 0;
+      font-size: 20px;
+    }
+
+    header.normal-header ul li a {
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+
+
+    header.additional-header {
+      background-color: #A4907C;
+      color: #000;
+      padding: 10px 0;
+    }
+
+    header.additional-header ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    header.additional-header ul li {
+      margin-right: 20px;
+    }
+
+    header.additional-header ul li a {
+      text-decoration: none;
+      color: #000;
+    }
+
+
+    header .logo h2 {
+      margin: 0;
+      font-size: 30px;
+      color: #fff;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav ul li {
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+
+    .icons {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .icons a {
+      color: #fff;
+      margin-left: 20px;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+      border-radius: 10px;
+      /* Add border radius */
+    }
+
+    /* Dropdown content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #A4907C;
+      min-width: 100px;
+      z-index: 1;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      /* Add border radius */
+      border: 2px solid transparent;
+      /* Add border to dropdown content */
+    }
+
+    /* Show dropdown content on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Style dropdown links */
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: #000;
+      border-radius: 10px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #8c765b;
+    }
+
+    /* Border specifically for EUR dropdown */
+    .dropdown-content.eur {
+      border-color: blue;
+      /* Change border color */
+    }
+
+
+    .banner {
+      width: 100%;
+      height: 0;
+      padding-top: 45%;
+      /* 9:16 aspect ratio (9 / 16 * 100) */
+      position: relative;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .banner .container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .banner-text {
+      max-width: 50%;
+      padding: 0 20px;
+      margin-top: -130px;
+      /* Adjust this value as needed */
+    }
+
+
+    .banner h4 {
+      font-size: 22px;
+      margin-bottom: 20px;
+      color: #463f32;
+    }
+
+    .banner h2 {
+      font-size: 48px;
+      margin: 0;
+      color: #463f32;
+    }
+
+    .banner .cta-button {
+      display: inline-block;
+      background-color: #98623C;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      margin-top: 20px;
+    }
+
+    .banner .cta-button:hover {
+      background-color: #6F4E37;
+    }
+
+
+
+
+    .product-boxes {
+      background-color: #dfdcd3;
+      padding: 20px 0;
+      cursor: pointer;
+    }
+
+    .product-box {
+      width: calc(20% - 20px);
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 20px;
+      box-sizing: border-box;
+      text-align: left;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .product-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .product-box {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+
+    .product-box img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .product-box h5,
+    .product-box p {
+      margin: 1px 0;
+    }
+
+
+    .gray-text {
+      color: gray;
+    }
+
+    .containers {
+      width: 1000px;
+      display: flex;
+      gap: 10px;
+      margin-top: 80px;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    .Box1 {
+      width: 600px;
+      height: 460px;
+      margin-top: 60px;
+      background-image: url("img7.png");
+      background-size: cover;
+
+
+
+    }
+
+    .Box1 p {
+      margin-top: 30%;
+      margin-left: 5%;
+      font-size: 27px;
+    }
+
+    .Box1 h1 {
+      margin-left: 5%;
+      color: black;
+      font-weight: 10;
+    }
+
+    .shop-now {
+      border: 1px solid white;
+      background-color: #b8a57d;
+      color: white;
+      margin-left: 5%;
+      padding: 5px 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      margin-top: 5px;
+      cursor: pointer;
+    }
+
+    .shop-now:hover {
+      background-color: #8c765b;
+    }
+
+    .Box2 {
+      width: 600px;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    .box2a {
+      margin-top: 50px;
+      width: 500px;
+      height: 250px;
+      background-image: url("img8.jpg");
+      background-size: cover;
+    }
+
+    .box2b {
+      width: 500px;
+      height: 250px;
+      background-image: url("img9.jpg");
+      background-size: cover;
+    }
+
+    .Box2 p {
+      margin-top: 5%;
+      margin-left: 5%;
+      font-size: 20px;
+    }
+
+    .Box2 h1 {
+      margin-left: 5%;
+      color: black;
+      font-weight: 5;
+    }
+
+    .containers1 {
+      width: 1000px;
+      display: flex;
+      gap: 40px;
+      margin-top: 30px;
+      margin-left: 80%;
+      align-items: center;
+      margin: 0 auto;
+    }
+
+    .Boxs1 {
+      width: 700px;
+      height: 250px;
+
+      background-image: url("img11.jpg");
+      background-size: cover;
+    }
+
+    .Boxs1 p {
+      margin-top: 12%;
+      margin-left: 5%;
+      font-size: 16px;
+    }
+
+    .Boxs1 h1 {
+      margin-left: 5%;
+      color: black;
+      font-weight: 5;
+    }
+
+    .shop-now {
+      border: 1px solid white;
+      background-color: #b8a57d;
+      color: white;
+      margin-left: 5%;
+
+      cursor: pointer;
+    }
+
+    .Boxs2 {
+      width: 450px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .boxs2a {
+
+      width: 500px;
+      height: 250px;
+      background-image: url("img10.jpg");
+      background-size: cover;
+    }
+
+
+    .Boxs2 p {
+      margin-top: 12%;
+      margin-left: 5%;
+      font-size: 16px;
+    }
+
+    .Boxs2 h1 {
+      margin-left: 5%;
+      color: black;
+      font-weight: 5;
+    }
+
+
+    .container1 {
+      width: 1000px;
+      display: flex;
+      gap: 50px;
+      margin-top: 30px;
+      margin-left: 80%;
+      align-items: center;
+      margin: 40px auto;
+    }
+
+    .checked {
+      color: goldenrod;
+      font-size: 10px;
+      vertical-align: middle;
+      margin-right: 2px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    .unchecked {
+      color: black;
+      font-size: 10px;
+      vertical-align: middle;
+      margin-right: 2px;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    .Boxa1 {
+      position: relative;
+      width: 500px;
+      height: 150px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      border: none;
+    }
+
+
+
+    .Boxa2 {
+      position: relative;
+      width: 500px;
+      height: 150px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      border: none;
+    }
+
+
+    .Boxa1 .text-container,
+    .Boxa2 .text-container {
+      width: calc(100% - 160px);
+      /* Adjusted width */
+      margin-left: auto;
+      /* Pushing text to the right */
+    }
+
+
+    .Boxa1 img,
+    .Boxa2 img {
+      width: 150px;
+      /* Adjusted width */
+      height: auto;
+      margin-right: auto;
+      /* Pushing image to the left */
+    }
+
+    .Boxa1 h5,
+    .Boxa2 h5 {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .Boxa1 h1,
+    .Boxa2 h1 {
+      margin: 0;
+      color: black;
+    }
+
+    .Boxa2 {
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .Boxa2 .boxa2a {
+      width: 100%;
+      /* Adjusted width */
+      height: 73%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .Boxa2 .text-container {
+      width: calc(100% - 160px);
+      /* Adjusted width */
+      margin-left: auto;
+      /* Pushing text to the right */
+    }
+
+    .Boxa2 h5 {
+      font-size: 16px;
+      margin: 0;
+    }
+
+    .Boxa2 h1 {
+      margin: 0;
+      color: black;
+    }
+
+    .euro {
+      font-size: 12px;
+      display: flex;
+      /* Set display to flex for inline alignment */
+      align-items: baseline;
+      /* Align items at their baseline */
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+
+    .euro .original-price {
+      color: grey;
+      /* Set color to grey for the original price */
+      margin-right: 6px;
+      /* Add margin for spacing */
+    }
+
+    .euro .discounted-price {
+      margin-left: 6px;
+      /* Add margin for spacing */
+    }
+
+    .progress-bar {
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      /* Adjusted width to cover the entire container */
+      height: 4px;
+      background: linear-gradient(to right, green 80%, #D3D3D3 80%);
+      /* Applied gradient background */
+      border-radius: 2px;
+      margin-bottom: 8px;
+      margin-top: 6px;
+    }
+
+    .stock-info {
+      font-size: 12px;
+      /* Adjust font size */
+      margin-bottom: 4px;
+      /* Add margin bottom */
+      margin-top: 4px;
+    }
+
+    .progress-bar1 {
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      /* Adjusted width to cover the entire container */
+      height: 4px;
+      background: linear-gradient(to right, green 60%, #D3D3D3 60%);
+      /* Applied gradient background */
+      border-radius: 2px;
+      margin-bottom: 8px;
+      margin-top: 6px;
+    }
+
+    .stock-info {
+      font-size: 12px;
+      /* Adjust font size */
+      margin-bottom: 4px;
+      /* Add margin bottom */
+      margin-top: 4px;
+    }
+
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    .logo h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+
+    .checked {
+      color: goldenrod;
+      font-size: 10px;
+      vertical-align: middle;
+      margin-right: 2px;
+    }
+
+    .fa {
+      font-size: 10px;
+      vertical-align: middle;
+    }
+
+    .addtocart {
+      border: 1px solid white;
+      background-color: #b8a57d;
+      color: white;
+      padding: 5px 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      margin-top: 2px;
+      cursor: pointer;
+    }
+
+    .addtocart:hover {
+      background-color: #8c765b;
+    }
+
+    .hover-underline {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.3s, text-decoration 0.3s;
+    }
+
+    .hover-underline:hover {
+      text-decoration: none;
+      color: #e8c6ad;
+    }
+
+    .footer-distributed {
+      background: #775e48;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font: bold 16px;
+      padding: 55px 50px;
+    }
+
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+
+    .footer-distributed .footer-left {
+      width: 40%;
+    }
+
+
+    .footer-distributed h1 {
+      color: #ffffff;
+      font: normal 50px;
+      margin: 0;
+    }
+
+    .footer-distributed h3 span {
+      color: lightseagreen;
+    }
+
+    /* Footer links */
+
+    .footer-distributed .footer-links {
+      color: #ffffff;
+      margin: 20px 0 12px;
+      padding: 0;
+    }
+
+    .footer-distributed .footer-links a {
+      display: inline-block;
+      line-height: 1.8;
+      font-weight: 400;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .footer-distributed .footer-company-name {
+      color: #222;
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    /* Footer Center */
+
+    .footer-distributed .footer-center {
+      width: 35%;
+    }
+
+    .footer-distributed .footer-center i {
+      background-color: #33383b;
+      color: #ffffff;
+      font-size: 25px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 42px;
+      margin: 10px 15px;
+      vertical-align: middle;
+    }
+
+    .footer-distributed .footer-center i.fa-envelope {
+      font-size: 17px;
+      line-height: 38px;
+    }
+
+    .footer-distributed .footer-center p {
+      display: inline-block;
+      color: #ffffff;
+      font-weight: 400;
+      vertical-align: middle;
+      margin: 0;
+    }
+
+    .footer-distributed .footer-center p span {
+      display: block;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .footer-distributed .footer-center p a {
+      color: #fff;
+      text-decoration: none;
+      ;
+    }
+
+    .footer-distributed .footer-links a:before {
+      content: "|";
+      font-weight: 300;
+      font-size: 20px;
+      left: 0;
+      color: #fff;
+      display: inline-block;
+      padding-right: 5px;
+    }
+
+    .footer-distributed .footer-links .link-1:before {
+      content: none;
+    }
+
+    /* Footer Right */
+
+    .footer-distributed .footer-right {
+      width: 20%;
+    }
+
+    .footer-distributed .footer-company-about {
+      line-height: 20px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .footer-distributed .footer-company-about span {
+      display: block;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .footer-distributed .footer-icons {
+      margin-top: 25px;
+    }
+
+    .footer-distributed .footer-icons a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      background-color: #33383b;
+      border-radius: 2px;
+
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+
+      margin-right: 3px;
+      margin-bottom: 5px;
+    }
+
+
+    @media (max-width: 880px) {
+
+      .footer-distributed {
+        font: bold 14px;
+      }
+
+      .footer-distributed .footer-left,
+      .footer-distributed .footer-center,
+      .footer-distributed .footer-right {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .footer-distributed .footer-center i {
+        margin-left: 0;
+      }
+  </style>
+</head>
+
+<header class="additional-header">
+  <div class="container">
+    <div>
+      <span><b>Call us free 24/7:(+91)1234-567-890</b></span>
+    </div>
+
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    <ul>
+      <li><b><a href="#contact-us">Contact Us</a></b></li>
+      <li><b><a href="#todays-deal">Today's Deal</a></b></li>
+      <li class="dropdown">
+        <b><a href="#currency">EUR <i class="fas fa-caret-down"></i></a></b>
+
+        <div class="dropdown-content">
+          <a href="#">INR</a>
+          <a href="#">USD</a>
+          <a href="#">GBP</a>
+          <a href="#">JPY</a>
+          <a href="#">AUD</a>
+          <a href="#">CAD</a>
+          <a href="#">CHF</a>
+          <a href="#">CNY</a>
+          <a href="#">SEK</a>
+          <a href="#">NZD</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <b><a href="#language">English <i class="fas fa-caret-down"></i></a></b>
+        <div class="dropdown-content">
+          <a href="#">Hindi</a>
+          <a href="#">French</a>
+          <a href="#">Spanish</a>
+          <a href="#">German</a>
+          <a href="#">Chinese</a>
+          <a href="#">Arabic</a>
+          <a href="#">Russian</a>
+          <a href="#">Portuguese</a>
+          <a href="#">Japanese</a>
+
+        </div>
+      </li>
+    </ul>
+    </ul>
+
+  </div>
+</header>
+
+
+<header class="normal-header">
+  <div class="container">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo">
+      <h2><b>Handmade Goods</b></h2>
+    </div>
+    <nav>
+      <ul>
+        <li><b><a href="index.html">
+              <p class="hover-underline">Home</p>
+            </a></b></li>
+        <li><b><a href="ikebana.html">
+              <p class="hover-underline">Ikebana</p>
+            </a></b></li>
+        <li><b><a href="ceramics.html">
+              <p class="hover-underline">Ceramics</p>
+            </a></b></li>
+
+        <li><b><a href="membership.html">
+              <p class="hover-underline">Membership</p>
+            </a></b></li>
+        <li><b><a href="blog.html">
+              <p class="hover-underline">Blog</p>
+            </a></b></li>
+      </ul>
+    </nav>
+    <div class="icons">
+
+      <a href="#search">
+        <p class="hover-underline"><i class="fas fa-search"></i></p>
+      </a>
+      <a href="#profile">
+        <p class="hover-underline"><i class="fas fa-user"></i></p>
+      </a>
+      <a href="#heart">
+        <p class="hover-underline"><i class="fas fa-heart"></i></p>
+      </a>
+      <a href="#cart">
+        <p class="hover-underline"><i class="fas fa-shopping-cart"></i></p>
+      </a>
+    </div>
+  </div>
+</header>
+
+
+<section id="home" class="banner" style="background-image: url('img123.jpg');">
+  <div class="container">
+    <div class="banner-text">
+      <h4>Best wooden products</h4>
+      <h2>New Sell Handmade</h2>
+      <h2>& Collection</h2>
+      <a href="#new-in" class="cta-button">Shop Now</a>
+    </div>
+  </div>
+</section>
+
+<div class="containera">
+  <h2><b>Shop by Categories</b></h2>
+</div>
+
+
+<section class="product-boxes">
+  <div class="container">
+    <div class="symbol"><b>&#x2039;</b></div>
+    <div class="product-box">
+      <img src="img2.jpg" alt="Product 1">
+      <h3>Architecture Art</h3>
+      <p>(15 items)</p>
+    </div>
+    <div class="product-box">
+      <img src="img4.jpg" alt="Product 2">
+      <h3>Literature Art</h3>
+      <p>(7 items)</p>
+    </div>
+
+    <div class="product-box">
+      <img src="img6.jpg" alt="Product 3">
+      <h3>Theater Art</h3>
+      <p>(9 items)</p>
+    </div>
+    <div class="product-box">
+      <img src="img5.jpg" alt="Product 4">
+      <h3>Ceramics Art</h3>
+      <p>(8 items)</p>
+    </div>
+    <div class="product-box">
+      <img src="img1.jpg" alt="Product 5">
+      <h3>Sculpture Art</h3>
+      <p>(15 items)</p>
+
+    </div>
+    <div class="symbol"><b>&#x203A;</b></div>
+  </div>
+</section>
+
+<div class="containers">
+  <div class="Box1">
+    <p>Flat discount 30%</p>
+    <h1>Knitted Cord<br>Coasters</h1>
+    <button class="shop-now">Shop Now</button>
+  </div>
+  <div class="Box2">
+    <div class="box2a">
+      <p>25% Discount</p>
+      <h1>Iconic Cloud<br>Coasters</h1>
+      <button class="shop-now">Shop Now</button>
+    </div>
+    <div class="box2b">
+      <p>35% Discount</p>
+      <h1>Special Matte<br>Nordic</h1>
+      <div>
+        <button class="shop-now">Shop Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="containera">
+  <nav>
+    <ul>
+      <li>
+        <h3 class="gray-text"><b>Literature Art</b></h3>
+      </li>
+      <li>
+        <h3><b>Theater Art</b></h3>
+      </li>
+      <li>
+        <h3><b>Ceramics Art</b></h3>
+      </li>
+      <li>
+        <h3><b>Architecture Art</b></h3>
+      </li>
+      <li>
+        <h3><b>Sculpture Art</b></h3>
+      </li>
+
+  </nav>
+</div>
+</div>
+
+<section class="product-boxes">
+  <div class="container">
+    <div class="symbol"><b>&#x2039;</b>
+    </div>
+
+    <div class="product-box">
+      <img src="im1.png" alt="Product 1">
+      <h5>Aristide Petrilli Decorative Object</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;68.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="im2.jpg" alt="Product 2">
+      <h5>Ceramic Pottery Vase<br>Lempereur sar</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;93.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+
+    <div class="product-box">
+      <img src="im3.png" alt="Product 3">
+      <h5>Ceramic Vase Matte <br>Blush Matte</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <div class="euro"><b>&#x20AC;45.60</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="im4.jpg" alt="Product 4">
+      <h5>Chinese Style Black Iron<br>Table Lamp</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;79.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="im5.png" alt="Product 5">
+      <h5>3D Wooden Puzzle For<br>Adults Animal</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;82.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="symbol"><b>&#x203A;</b></div>
+  </div>
+</section>
+
+
+<div class="containers1">
+  <div class="Boxs1">
+    <p>40% Discount</p>
+    <h1>Wooden Block<br>Animals</h1>
+    <button class="shop-now">Shop Now</button>
+  </div>
+  <div class="Boxs2">
+    <div class="boxs2a">
+      <p>30% Discount</p>
+      <h1>Terra Speckle<br>Cotta</h1>
+      <button class="shop-now">Shop Now</button>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="containera">
+
+  <h2><b>Deal Of The Day</b></h2>
+</div>
+</div>
+
+<div class="container1">
+  <div class="Boxa1">
+    <img src="img13.jpg" alt="Image">
+    <div class="text-container">
+      <h5>Antique White Metal Vintage Pocket</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star unchecked"></span>
+      <span class="fa fa-star unchecked"></span>
+      <div class="euro">
+        <b><span class="original-price">&euro;<del> 84.00</del></span></b>
+        <b><span class="discounted-price">&euro;<span> 80.64</span></span></b>
+      </div>
+      <p class="stock-info">Hurry up! Only <b>41</b> items left in stock!</p>
+      <div class="progress-bar"></div>
+      <div class="timer-box">
+        <p id="demo"></p>
+      </div>
+
+      <button class="shop-now">Shop Now</button>
+    </div>
+  </div>
+  <div class="Boxa2">
+    <div class="boxa2a">
+      <img src="img12.jpg" alt="Image">
+      <div class="text-container">
+        <h5>Baby Angel Polyresin Classic Showpiece</h5>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star checked"></span>
+        <span class="fa fa-star unchecked"></span>
+        <div class="euro">
+          <b><span class="original-price">&euro;<del> 74.00</del></span></b>
+          <b><span class="discounted-price">&euro;<span> 70.30</span></span></b>
+        </div>
+        <p class="stock-info">Hurry up! Only <b>25</b> items left in stock!</p>
+        <div class="progress-bar1"></div>
+        <div class="timer-box">
+          <p id="demo"></p>
+        </div>
+
+        <button class="shop-now">Shop Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="containera">
+
+  <h2><b>Featured Products</b></h2>
+</div>
+</div>
+
+<section class="product-boxes">
+  <div class="container">
+    <div class="symbol"><b>&#x2039;</b>
+    </div>
+
+    <div class="product-box">
+      <img
+        src="Acrylic Smiley Happy Face Keychain, Rainbow Acrylic Keychain, Retro Daisy Flower Keychain, Heart Smiley Happy Face Keychain, Lightning Bolt.jpeg"
+        alt="Product 1">
+      <h5>Acrylic Retro Keychain<br>Set of 4</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;68.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="Click to Design Custom Tote Bags for Brands _ noissue.jpeg" alt="Product 2">
+      <h5>Customized Tote Bag with Animal Print on it</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;93.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+
+    <div class="product-box">
+      <img
+        src="Crop Top a maglia ricamato a fiore da donna, Crop Top floreale, Crop Top all'uncinetto, Crop Top estivo - Etsy Italia.jpeg"
+        alt="Product 3">
+      <h5> Crochet Handmade Floral Crop Top</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <div class="euro"><b>&#x20AC;45.60</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img
+        src="Punch Needle Coaster, Handmade Mug Rug, Drink Coasters, Floral Coaster Set of 4, Tufted Coaster, Jewelry Candle Display, Danish Pastel Decor - Etsy.jpeg"
+        alt="Product 4">
+      <h5>Punch Needle, Mug Coaster<br>Set of 4</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;79.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="product-box">
+      <img src="Crochet strawberry bag and crochet water bottle holder set.jpeg" alt="Product 5">
+      <h5>Crochet strawberry bag and water bottle holder set</h5>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <span class="fa fa-star"></span>
+      <div class="euro"><b>&#x20AC;82.00</b></div>
+      <button class="addtocart">Add to Cart</button>
+    </div>
+    <div class="symbol"><b>&#x203A;</b></div>
+  </div>
+</section>
+
+
+<div class="container21">
+  <div class="info">
+    <img src="images__4_-removebg-preview.png" class="logo2">
+    <h2>Quick delivery options</h2>
+    <p>Earn discount of 10% on every purchase, that you can redeem on the next order!</p>
+  </div>
+
+  <div class="info">
+    <img src="images__2_-removebg-preview.png" alt="Loyalty Rewards Logo" class="logo1">
+    <h2>Loyalty Rewards</h2>
+    <p>Earn discount of 10% on every purchase, that you can redeem on the next order!</p>
+  </div>
+
+  <div class="info">
+    <img src="images__5_-removebg-preview.png" class="logo1">
+
+    <h2>Crafting Inspiration</h2>
+
+    <p>Receive expert crafting tips and exclusive offers through our app.</p>
+  </div>
+</div>
+
+<footer class="footer-distributed">
+
+  <div class="footer-left">
+    <div class="logo">
+      <img src="logo.jpeg" alt="Logo">
+      <h1><b>Handmade Goods</b></h1>
+    </div>
+
+    <p class="footer-links">
+      <a href="#" class="link-1">Home</a>
+
+      <a href="#">Blog</a>
+
+      <a href="#">Pricing</a>
+
+      <a href="#">About</a>
+
+      <a href="#">Faq</a>
+
+      <a href="#">Contact</a>
+    </p>
+
+    <p class="footer-company-name">Handmade Goods © 2024</p>
+  </div>
+
+  <div class="footer-center">
+
+    <div>
+      <i class="fa fa-map-marker"></i>
+      <p><span>1300 Handmade Goods</span> Pune, Maharashtra</p>
+    </div>
+
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>(+91)1234-567-890</p>
+    </div>
+
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="mailto:support@handmadegoods.com">support@handmadegoods.com</a></p>
+    </div>
+
+  </div>
+
+  <div class="footer-right">
+
+    <p class="footer-company-about">
+      <span>About Us</span>
+      More than just a store, we connect you with artisans and the stories behind their creations. Bring the beauty of
+      handmade into your home.
+    </p>
+
+    <div class="footer-icons">
+
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+
+    </div>
+
+
+
+  </div>
+
+</footer>
+
+
+
+
+
+
+
+</style>
+</head>
